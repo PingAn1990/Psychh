@@ -2,7 +2,7 @@ Package: Psychh
 Type: Package
 Title: Reported-vs-Computed Psychometrics and Regression Replication Helpers
 Version: 0.0.2
-Authors@R: person("Albaficaa28", role = c("aut","cre"))
+Authors@R: person(given = "PingAn", family = "1990", email = "pingan_1990_1@163.com", role = c("aut", "cre"))
 Description: Minimal interfaces to reproduce reported (paper) outputs alongside computed outputs from possibly contaminated survey data.
 License: MIT + file LICENSE
 Encoding: UTF-8
