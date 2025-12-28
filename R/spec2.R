@@ -94,32 +94,25 @@ spec2 <- function() {
         )
       ),
       
-      table3 = local({
-        dn <- list(
-          c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC"),
-          c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC")
-        )
-        
-        v <- c(
-          0.87949753, 0.44923928, 0.61661092, -0.50618238, 0.60278952, 0.52403928, 0.43415306,
-          0.44924024, 0.85337152, 0.63359566, -0.41514343, 0.40036219, 0.39139298, 0.41014946,
-          0.62037316, 0.62849839, 0.85721642, -0.58801459, 0.55287794, 0.52396581, 0.48743617,
-          -0.51152792, -0.42116068, -0.59092012, 0.85107853, -0.48944190, -0.39717895, -0.42782945,
-          0.60259454, 0.39546789, 0.54786433, -0.49445821, 0.77791847, -0.68003186, -0.41921232,
-          0.52140373, 0.38572640, 0.52069055, -0.40166226, -0.68041580, 0.90447967, 0.52966599,
-          0.43148078, 0.40613849, 0.48561871, -0.43342593, -0.42393491, 0.53366410, 0.84792342
-        )
-        
-        M <- matrix(v, nrow = 7, byrow = TRUE, dimnames = dn)
-        
-        list(
-          # 数值矩阵：你原来已有的
-          matrix = M,
-          
-          # 字符矩阵：给 par() 用（它会再 as.numeric() 回去），必须是“带维度”的 matrix
-          matrix_raw = matrix(sprintf("%.8f", v), nrow = 7, byrow = TRUE, dimnames = dn)
-        )
-      })
+      # ===== Table 3 (Discriminant Validity) =====
+      table3 = list(
+        note = "All values are significant at 1% while diagonal value is square root of AVE.",
+        order = c("ENK","ENA","ENR","PRC","GRP","FCL","GRC"),
+        # raw values as they appear in the doc (upper triangle blank; includes '-042' typo)
+        matrix_raw = {
+          ord <- c("ENK","ENA","ENR","PRC","GRP","FCL","GRC")
+          M <- matrix("", nrow = 7, ncol = 7, dimnames = list(ord, ord))
+          diag(M) <- c("0.88","0.85","0.86","0.85","0.78","0.90","0.85")
+          M["ENA","ENK"] <- "0.45"
+          M["ENR","ENK"] <- "0.62"; M["ENR","ENA"] <- "0.63"
+          M["PRC","ENK"] <- "-0.51"; M["PRC","ENA"] <- "-0.42"; M["PRC","ENR"] <- "-0.59"
+          M["GRP","ENK"] <- "0.60"; M["GRP","ENA"] <- "0.40"; M["GRP","ENR"] <- "0.55"; M["GRP","PRC"] <- "-0.49"
+          M["FCL","ENK"] <- "0.52"; M["FCL","ENA"] <- "0.39"; M["FCL","ENR"] <- "0.52"; M["FCL","PRC"] <- "-0.40"; M["FCL","GRP"] <- "-0.68"
+          M["GRC","ENK"] <- "0.43"; M["GRC","ENA"] <- "0.41"; M["GRC","ENR"] <- "0.49"; M["GRC","PRC"] <- "-0.43"; M["GRC","GRP"] <- "-042"; M["GRC","FCL"] <- "0.53"
+          M
+        },
+        sanitize = list("-042" = "-0.42")
+      ),
       
       
       table4 = list(
