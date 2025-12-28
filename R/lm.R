@@ -164,8 +164,29 @@ lm <- function(data, formula, spec2 = spec2(),
 
   # disambiguate by panel if needed
   if (length(candidates) > 1) {
+    # Prefer Table 4 when the same signature appears in Table 5 (Model I blocks).
+    # If the caller provides context$table or context$panel we use that to disambiguate.
+    tbl <- NULL
+    if (is.list(context) && !is.null(context$table)) tbl <- tolower(as.character(context$table)[1])
+    if (!is.null(tbl) && nzchar(tbl)) {
+      cand_tbl <- candidates[vapply(candidates, function(k) identical(tolower(reg[[k]]$table %||% ""), tbl), logical(1))]
+      if (length(cand_tbl) == 1) {
+        return(list(matched=TRUE, key=cand_tbl[1], candidates=candidates,
+                    reason=paste0("matched by context table=", tbl),
+                    panel=reg[[cand_tbl[1]]]$panel %||% NULL))
+      }
+    }
+
     panel <- NULL
     if (is.list(context) && !is.null(context$panel)) panel <- as.character(context$panel)[1]
+    if (is.null(panel) || !nzchar(panel)) {
+      cand4 <- candidates[vapply(candidates, function(k) identical(reg[[k]]$table, "table4"), logical(1))]
+      if (length(cand4) == 1) {
+        return(list(matched=TRUE, key=cand4[1], candidates=candidates,
+                    reason="preferred Table 4 (no context$panel)",
+                    panel=NA_character_))
+      }
+    }
     if (!is.null(panel) && nzchar(panel)) {
       cand2 <- candidates[vapply(candidates, function(k) identical(reg[[k]]$panel, panel), logical(1))]
       if (length(cand2) == 1) {
@@ -219,26 +240,23 @@ lm <- function(data, formula, spec2 = spec2(),
 
 .construct_scores <- function(data, spec2, method = c("mean")) {
   method <- match.arg(method)
-  n <- NROW(data)
-  if (is.null(n) || n == 0) stop("Input data has 0 rows; cannot compute construct scores.")
-  # IMPORTANT: pre-allocate correct number of rows, otherwise `sc[[k]] <- ...` fails.
-  sc <- data.frame(.row_id = seq_len(n))
-
+  # IMPORTANT: data.frame() has 0 rows. In base R, adding a new column of length
+  # n to a 0-row data.frame via [[<- triggers:
+  #   "replacement has n rows, data has 0".
+  # Pre-allocate the row dimension so score columns can be added safely.
+  sc <- data.frame(row_id = seq_len(nrow(data)))
   for (k in spec2$schema$construct_order) {
     items <- spec2$schema$items_by_construct[[k]]
     if (length(items) == 0) next
     present <- intersect(items, names(data))
     if (length(present) == 0) next
-
-    X <- data[, present, drop = FALSE]
+    X <- data[, present, drop=FALSE]
     X <- as.data.frame(lapply(X, function(z) .as_numeric(z)))
-
     if (method == "mean") {
       sc[[k]] <- rowMeans(X, na.rm = TRUE)
     }
   }
-
-  sc$.row_id <- NULL
+  sc$row_id <- NULL
   sc
 }
 

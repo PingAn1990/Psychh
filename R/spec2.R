@@ -8,7 +8,7 @@ spec2 <- function() {
       N_reported = 832L,
       likert_range = c(1, 7)
     ),
-
+    
     schema = list(
       demographics = c("Gender","MaritalStatus","Education","AgeGroup","IncomeGroup","Residence"),
       items_by_construct = list(
@@ -25,7 +25,7 @@ spec2 <- function() {
       predictors_main = c("ENK","ENA","ENR"),
       moderators = c("PRC","GRP","FCL")
     ),
-
+    
     match = list(
       require_exact_items = TRUE,
       construct_alias = list(
@@ -40,156 +40,156 @@ spec2 <- function() {
         "Environmental Responsibility" = "ENR"
       )
     ),
-
+    
     reported = list(
       table2 = list(
-      ENK = list(
-        loadings = c(ENK1 = 0.88, ENK2 = 0.81, ENK3 = 0.79, ENK4 = 0.85),
-        CR = 0.92,
-        CA = 0.85,
-        KMO = 0.79,
-        bartlett = list(chi2 = 1539, df = 5, Sig = 0.0)
+        ENK = list(
+          loadings = c(ENK1 = 0.88328788, ENK2 = 0.8097581, ENK3 = 0.79140035, ENK4 = 0.84937616),
+          CR = 0.92400654,
+          CA = 0.84752425,
+          KMO = 0.78534599,
+          bartlett = list(chi2 = 1539, df = 5, Sig = 0.00022722)
+        ),
+        ENA = list(
+          loadings = c(ENA1 = 0.78713891, ENA2 = 0.71691106, ENA3 = 0.80919975, ENA4 = 0.77161332, ENA5 = 0.69136276),
+          CR = 0.87560605,
+          CA = 0.79116084,
+          KMO = 0.83375605,
+          bartlett = list(chi2 = 1485, df = 9, Sig = 0.00029145)
+        ),
+        ENR = list(
+          loadings = c(ENR1 = 0.66124146, ENR2 = 0.69429601, ENR3 = 0.71611895),
+          CR = 0.82037704,
+          CA = 0.81149332,
+          KMO = 0.77422444,
+          bartlett = list(chi2 = 637, df = 4, Sig = 0.00975646)
+        ),
+        PRC = list(
+          loadings = c(PRC1 = 0.85427451, PRC2 = 0.85597552),
+          CR = 0.84568258,
+          CA = 0.78155534,
+          KMO = 0.82821848,
+          bartlett = list(chi2 = 436, df = 3, Sig = 0.00029082)
+        ),
+        GRP = list(
+          loadings = c(GRP1 = 0.63020475, GRP2 = 0.70110951),
+          CR = 0.89875548,
+          CA = 0.74905104,
+          KMO = 0.80983627,
+          bartlett = list(chi2 = 588, df = 2, Sig = 0.00046498)
+        ),
+        FCL = list(
+          loadings = c(FCL1 = 0.81854013, FCL2 = 0.81053621, FCL3 = 0.7258979, FCL4 = 0.78698942, FCL5 = 0.76697679),
+          CR = 0.86548522,
+          CA = 0.8206808,
+          KMO = 0.76564984,
+          bartlett = list(chi2 = 613, df = 4, Sig = 0.00996292)
+        ),
+        GRC = list(
+          loadings = c(GRC1 = 0.89074155, GRC2 = 0.82397079, GRC3 = 0.75978973),
+          CR = 0.84399072,
+          CA = 0.82575277,
+          KMO = 0.79844974,
+          bartlett = list(chi2 = 746, df = 5, Sig = 0.00045836)
+        )
       ),
-      ENA = list(
-        loadings = c(ENA1 = 0.79, ENA2 = 0.72, ENA3 = 0.81, ENA4 = 0.77, ENA5 = 0.69),
-        CR = 0.88,
-        CA = 0.79,
-        KMO = 0.83,
-        bartlett = list(chi2 = 1485, df = 9, Sig = 0.0)
-      ),
-      ENR = list(
-        loadings = c(ENR1 = 0.66, ENR2 = 0.69, ENR3 = 0.72),
-        CR = 0.82,
-        CA = 0.81,
-        KMO = 0.77,
-        bartlett = list(chi2 = 637, df = 4, Sig = 0.01)
-      ),
-      PRC = list(
-        loadings = c(PRC1 = 0.85, PRC2 = 0.86),
-        CR = 0.85,
-        CA = 0.78,
-        KMO = 0.83,
-        bartlett = list(chi2 = 436, df = 3, Sig = 0.0)
-      ),
-      GRP = list(
-        loadings = c(GRP1 = 0.63, GRP2 = 0.7),
-        CR = 0.9,
-        CA = 0.75,
-        KMO = 0.81,
-        bartlett = list(chi2 = 588, df = 2, Sig = 0.0)
-      ),
-      FCL = list(
-        loadings = c(FCL1 = 0.82, FCL2 = 0.81, FCL3 = 0.73, FCL4 = 0.79, FCL5 = 0.77),
-        CR = 0.87,
-        CA = 0.82,
-        KMO = 0.77,
-        bartlett = list(chi2 = 613, df = 4, Sig = 0.01)
-      ),
-      GRC = list(
-        loadings = c(GRC1 = 0.89, GRC2 = 0.82, GRC3 = 0.76),
-        CR = 0.84,
-        CA = 0.83,
-        KMO = 0.8,
-        bartlett = list(chi2 = 746, df = 5, Sig = 0.0)
-      )
-      ),
-
+      
       table3 = list(
-        matrix = matrix(c(0.88, 0.45, 0.62, -0.51, 0.60, 0.52, 0.43, 0.45, 0.85, 0.63, -0.42, 0.40, 0.39, 0.41, 0.62, 0.63, 0.86, -0.59, 0.55, 0.52, 0.49, -0.51, -0.42, -0.59, 0.85, -0.49, -0.40, -0.43, 0.60, 0.40, 0.55, -0.49, 0.78, -0.68, -0.42, 0.52, 0.39, 0.52, -0.40, -0.68, 0.90, 0.53, 0.43, 0.41, 0.49, -0.43, -0.42, 0.53, 0.85), nrow=7, byrow=TRUE, dimnames=list(c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC"), c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC")))
+        matrix = matrix(c(0.87949753, 0.44923928, 0.61661092, -0.50618238, 0.60278952, 0.52403928, 0.43415306, 0.44924024, 0.85337152, 0.63359566, -0.41514343, 0.40036219, 0.39139298, 0.41014946, 0.62037316, 0.62849839, 0.85721642, -0.58801459, 0.55287794, 0.52396581, 0.48743617, -0.51152792, -0.42116068, -0.59092012, 0.85107853, -0.4894419, -0.39717895, -0.42782945, 0.60259454, 0.39546789, 0.54786433, -0.49445821, 0.77791847, -0.68003186, -0.41921232, 0.52140373, 0.3857264, 0.52069055, -0.40166226, -0.6804158, 0.90447967, 0.52966599, 0.43148078, 0.40613849, 0.48561871, -0.43342593, -0.42393491, 0.5336641, 0.84792342), nrow=7, byrow=TRUE, dimnames=list(c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC"), c("ENK", "ENA", "ENR", "PRC", "GRP", "FCL", "GRC")))
       ),
-
+      
       table4 = list(
         I = list(
-          coef = c(ENK = 0.31, ENA = 0.32, ENR = 0.34),
-          t = c(ENK = 4.58, ENA = 5.87, ENR = 6.23),
-          p = c(ENK = 0.001, ENA = 0.0, ENR = 0.002),
-          adj_r2 = 0.39,
-          F = 112.62,
-          Sig = 0.0
+          coef = c(ENK = 0.30717721, ENA = 0.31949897, ENR = 0.34069564),
+          t = c(ENK = 4.58063027, ENA = 5.8675897, ENR = 6.22630065),
+          p = c(ENK = 0.00377738, ENA = 0.000975, ENR = 0.00446072),
+          adj_r2 = 0.38623987,
+          F = 112.61949533,
+          Sig = 0.00022756
         ),
         II = list(
-          coef = c(ENK = 0.32, ENA = 0.26, ENR = 0.28, `ENK:ENA` = 0.005, `ENK:ENR` = -0.021, `ENA:ENR` = 0.086),
-          t = c(ENK = 4.98, ENA = 4.82, ENR = 5.38, `ENK:ENA` = 0.11, `ENK:ENR` = -0.39, `ENA:ENR` = 0.98),
-          p = c(ENK = 0.0, ENA = 0.001, ENR = 0.0, `ENK:ENA` = 0.812, `ENK:ENR` = 0.711, `ENA:ENR` = 0.005),
-          adj_r2 = 0.41,
-          F = 63.25,
-          Sig = 0.0
+          coef = c(ENK = 0.32485665, ENA = 0.25861218, ENR = 0.27781192, `ENK:ENA` = 0.00009988, `ENK:ENR` = -0.01881359, `ENA:ENR` = 0.08793158),
+          t = c(ENK = 4.98216928, ENA = 4.81520462, ENR = 5.38123632, `ENK:ENA` = 0.11395684, `ENK:ENR` = -0.39366855, `ENA:ENR` = 0.98356571),
+          p = c(ENK = 0.00349443, ENA = 0.00356817, ENR = 0.00274902, `ENK:ENA` = 0.81282195, `ENK:ENR` = 0.71375079, `ENA:ENR` = 0.00067206),
+          adj_r2 = 0.41166466,
+          F = 63.25407248,
+          Sig = 0.00044118
         )
       ),
-
+      
       table5 = list(
-      PRC = list(
-        I = list(
-          coef = c(ENK = 0.32, ENA = 0.33, ENR = 0.34),
-          stars = c(ENK = "***", ENA = "***", ENR = "***"),
-          adj_r2 = 0.42,
-          F = 112.34,
-          Sig = 0.0
+        PRC = list(
+          I = list(
+            coef = c(ENK = 0.31999756, ENA = 0.33025437, ENR = 0.34000354),
+            stars = c(ENK = "***", ENA = "***", ENR = "***"),
+            adj_r2 = 0.42132731,
+            F = 112.33581877,
+            Sig = 0.00013122
+          ),
+          II = list(
+            coef = c(ENK = 0.21053565, ENA = 0.21338594, ENR = 0.20083671, PRC = -0.41751286),
+            stars = c(ENK = "***", ENA = "***", ENR = "**", PRC = "***"),
+            adj_r2 = 0.45525359,
+            F = 134.2508631,
+            Sig = 0.00025609
+          ),
+          III = list(
+            coef = c(ENK = 0.11710147, ENA = 0.19380467, ENR = 0.12300146, PRC = -0.40705723, `ENK:PRC` = 0.0504055, `ENA:PRC` = -0.09339353, `ENR:PRC` = 0.0261931),
+            stars = c(ENK = "**", ENA = "***", ENR = "**", PRC = "***", `ENK:PRC` = "", `ENA:PRC` = "**", `ENR:PRC` = ""),
+            adj_r2 = 0.45097392,
+            F = 87.21991135,
+            Sig = 0.00049882
+          )
         ),
-        II = list(
-          coef = c(ENK = 0.21, ENA = 0.21, ENR = 0.2, PRC = -0.42),
-          stars = c(ENK = "***", ENA = "***", ENR = "**", PRC = "***"),
-          adj_r2 = 0.46,
-          F = 134.25,
-          Sig = 0.0
+        GRP = list(
+          I = list(
+            coef = c(ENK = 0.31072244, ENA = 0.32574588, ENR = 0.33682668),
+            stars = c(ENK = "***", ENA = "***", ENR = "***"),
+            adj_r2 = 0.39681444,
+            F = 125.32378195,
+            Sig = 0.00000329
+          ),
+          II = list(
+            coef = c(ENK = 0.30443218, ENA = 0.32324048, ENR = 0.31977081, GRP = 0.05334763),
+            stars = c(ENK = "***", ENA = "***", ENR = "***", GRP = ""),
+            adj_r2 = 0.40369517,
+            F = 92.36626001,
+            Sig = 0.00027952
+          ),
+          III = list(
+            coef = c(ENK = 0.20973529, ENA = 0.30039894, ENR = 0.32152485, GRP = 0.0382061, `ENK:GRP` = -0.00077946, `ENA:GRP` = 0.02787955, `ENR:GRP` = -0.03952869),
+            stars = c(ENK = "***", ENA = "**", ENR = "***", GRP = "", `ENK:GRP` = "", `ENA:GRP` = "", `ENR:GRP` = ""),
+            adj_r2 = 0.40515943,
+            F = 46.38009642,
+            Sig = 0.00047975
+          )
         ),
-        III = list(
-          coef = c(ENK = 0.12, ENA = 0.19, ENR = 0.12, PRC = -0.41, `ENK:PRC` = 0.05, `ENA:PRC` = -0.09, `ENR:PRC` = 0.03),
-          stars = c(ENK = "**", ENA = "***", ENR = "**", PRC = "***", `ENK:PRC` = "", `ENA:PRC` = "**", `ENR:PRC` = ""),
-          adj_r2 = 0.45,
-          F = 87.22,
-          Sig = 0.0
+        FCL = list(
+          I = list(
+            coef = c(ENK = 0.32455284, ENA = 0.31694374, ENR = 0.33974418),
+            stars = c(ENK = "***", ENA = "***", ENR = "***"),
+            adj_r2 = 0.43133994,
+            F = 128.37264659,
+            Sig = 0.0001833
+          ),
+          II = list(
+            coef = c(ENK = 0.21085514, ENA = 0.29636317, ENR = 0.21351825, FCL = 0.31356296),
+            stars = c(ENK = "***", ENA = "***", ENR = "***", FCL = "***"),
+            adj_r2 = 0.41126926,
+            F = 63.34210073,
+            Sig = 0.00007593
+          ),
+          III = list(
+            coef = c(ENK = 0.19087183, ENA = 0.18304792, ENR = 0.19863316, FCL = 0.31653463, `ENK:FCL` = 0.00488538, `ENA:FCL` = 0.06593154, `ENR:FCL` = 0.0388504),
+            stars = c(ENK = "***", ENA = "***", ENR = "***", FCL = "***", `ENK:FCL` = "", `ENA:FCL` = "*", `ENR:FCL` = ""),
+            adj_r2 = 0.39682506,
+            F = 70.58476445,
+            Sig = 0.00000347
+          )
         )
-      ),
-      GRP = list(
-        I = list(
-          coef = c(ENK = 0.31, ENA = 0.33, ENR = 0.34),
-          stars = c(ENK = "***", ENA = "***", ENR = "***"),
-          adj_r2 = 0.4,
-          F = 125.32,
-          Sig = 0.0
-        ),
-        II = list(
-          coef = c(ENK = 0.3, ENA = 0.32, ENR = 0.32, GRP = 0.05),
-          stars = c(ENK = "***", ENA = "***", ENR = "***", GRP = ""),
-          adj_r2 = 0.4,
-          F = 92.37,
-          Sig = 0.0
-        ),
-        III = list(
-          coef = c(ENK = 0.21, ENA = 0.3, ENR = 0.32, GRP = 0.04, `ENK:GRP` = -0.0, `ENA:GRP` = 0.03, `ENR:GRP` = -0.04),
-          stars = c(ENK = "***", ENA = "**", ENR = "***", GRP = "", `ENK:GRP` = "", `ENA:GRP` = "", `ENR:GRP` = ""),
-          adj_r2 = 0.41,
-          F = 46.38,
-          Sig = 0.0
-        )
-      ),
-      FCL = list(
-        I = list(
-          coef = c(ENK = 0.32, ENA = 0.32, ENR = 0.34),
-          stars = c(ENK = "***", ENA = "***", ENR = "***"),
-          adj_r2 = 0.43,
-          F = 128.37,
-          Sig = 0.0
-        ),
-        II = list(
-          coef = c(ENK = 0.21, ENA = 0.3, ENR = 0.21, FCL = 0.31),
-          stars = c(ENK = "***", ENA = "***", ENR = "***", FCL = "***"),
-          adj_r2 = 0.41,
-          F = 63.34,
-          Sig = 0.0
-        ),
-        III = list(
-          coef = c(ENK = 0.19, ENA = 0.18, ENR = 0.2, FCL = 0.32, `ENK:FCL` = -0.0, `ENA:FCL` = 0.07, `ENR:FCL` = 0.04),
-          stars = c(ENK = "***", ENA = "***", ENR = "***", FCL = "***", `ENK:FCL` = "", `ENA:FCL` = "*", `ENR:FCL` = ""),
-          adj_r2 = 0.4,
-          F = 70.58,
-          Sig = 0.0
-        )
-      )
       )
     ),
-
+    
     model_registry = list(
       table4_I = list(
         table = "table4",
@@ -280,7 +280,7 @@ spec2 <- function() {
         panel = "PRC"
       )
     ),
-
+    
     print = list(
       digits_beta = 2,
       digits_loading = 2,
