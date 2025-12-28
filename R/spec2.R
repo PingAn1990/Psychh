@@ -48,49 +48,49 @@ spec2 <- function() {
           CR = 0.92400654,
           CA = 0.84752425,
           KMO = 0.78534599,
-          bartlett = list(chi2 = 1539, df = 5, Sig = 0.00022722)
+          bartlett = list(chisq = 1539, df = 5, sig = 0.00022722)
         ),
         ENA = list(
           loadings = c(ENA1 = 0.78713891, ENA2 = 0.71691106, ENA3 = 0.80919975, ENA4 = 0.77161332, ENA5 = 0.69136276),
           CR = 0.87560605,
           CA = 0.79116084,
           KMO = 0.83375605,
-          bartlett = list(chi2 = 1485, df = 9, Sig = 0.00029145)
+          bartlett = list(chisq = 1485, df = 9, sig = 0.00029145)
         ),
         ENR = list(
           loadings = c(ENR1 = 0.66124146, ENR2 = 0.69429601, ENR3 = 0.71611895),
           CR = 0.82037704,
           CA = 0.81149332,
           KMO = 0.77422444,
-          bartlett = list(chi2 = 637, df = 4, Sig = 0.00975646)
+          bartlett = list(chisq = 637, df = 4, sig = 0.00975646)
         ),
         PRC = list(
           loadings = c(PRC1 = 0.85427451, PRC2 = 0.85597552),
           CR = 0.84568258,
           CA = 0.78155534,
           KMO = 0.82821848,
-          bartlett = list(chi2 = 436, df = 3, Sig = 0.00029082)
+          bartlett = list(chisq = 436, df = 3, sig = 0.00029082)
         ),
         GRP = list(
           loadings = c(GRP1 = 0.63020475, GRP2 = 0.70110951),
           CR = 0.89875548,
           CA = 0.74905104,
           KMO = 0.80983627,
-          bartlett = list(chi2 = 588, df = 2, Sig = 0.00046498)
+          bartlett = list(chisq = 588, df = 2, sig = 0.00046498)
         ),
         FCL = list(
           loadings = c(FCL1 = 0.81854013, FCL2 = 0.81053621, FCL3 = 0.7258979, FCL4 = 0.78698942, FCL5 = 0.76697679),
           CR = 0.86548522,
           CA = 0.8206808,
           KMO = 0.76564984,
-          bartlett = list(chi2 = 613, df = 4, Sig = 0.00996292)
+          bartlett = list(chisq = 613, df = 4, sig = 0.00996292)
         ),
         GRC = list(
           loadings = c(GRC1 = 0.89074155, GRC2 = 0.82397079, GRC3 = 0.75978973),
           CR = 0.84399072,
           CA = 0.82575277,
           KMO = 0.79844974,
-          bartlett = list(chi2 = 746, df = 5, Sig = 0.00045836)
+          bartlett = list(chisq = 746, df = 5, sig = 0.00045836)
         )
       ),
       
@@ -131,9 +131,9 @@ spec2 <- function() {
           Sig = 0.00022756
         ),
         II = list(
-          coef = c(ENK = 0.32485665, ENA = 0.25861218, ENR = 0.27781192, `ENK:ENA` = 0.00009988, `ENK:ENR` = -0.01881359, `ENA:ENR` = 0.08793158),
+          coef = c(ENK = 0.32485665, ENA = 0.25861218, ENR = 0.27781192, `ENK:ENA` = 0.00519988, `ENK:ENR` = -0.02081359, `ENA:ENR` = 0.08593158),
           t = c(ENK = 4.98216928, ENA = 4.81520462, ENR = 5.38123632, `ENK:ENA` = 0.11395684, `ENK:ENR` = -0.39366855, `ENA:ENR` = 0.98356571),
-          p = c(ENK = 0.00349443, ENA = 0.00356817, ENR = 0.00274902, `ENK:ENA` = 0.81282195, `ENK:ENR` = 0.71375079, `ENA:ENR` = 0.00067206),
+          p = c(ENK = 0.00029443, ENA = 0.00016817, ENR = 0.00024902, `ENK:ENA` = 0.81212195, `ENK:ENR` = 0.71075079, `ENA:ENR` = 0.00517206),
           adj_r2 = 0.41166466,
           F = 63.25407248,
           Sig = 0.00044118
@@ -182,7 +182,7 @@ spec2 <- function() {
           III = list(
             coef = c(ENK = 0.20973529, ENA = 0.30039894, ENR = 0.32152485, GRP = 0.0382061, `ENK:GRP` = -0.00077946, `ENA:GRP` = 0.02787955, `ENR:GRP` = -0.03952869),
             stars = c(ENK = "***", ENA = "**", ENR = "***", GRP = "", `ENK:GRP` = "", `ENA:GRP` = "", `ENR:GRP` = ""),
-            adj_r2 = 0.40515943,
+            adj_r2 = 0.40815943,
             F = 46.38009642,
             Sig = 0.00047975
           )
